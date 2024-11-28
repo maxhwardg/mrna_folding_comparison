@@ -100,9 +100,9 @@ class CodonFrequencyTable:
 
 def random_aa_seq(length: int) -> str:
     """Generates a random amino acid sequence of the given length."""
-    assert length >= 2, "Length must be at least 2 to allow for a start and stop codon."
-    internal = ''.join(random.choices(list(AA_SINGLE_LETTER.values())[:-1], k=length-2))
-    return f'M{internal}*'
+    assert length >= 1, "Length must be at least 2 to allow for a start codon."
+    internal = ''.join(random.choices(list(AA_SINGLE_LETTER.values())[:-1], k=length-1))
+    return f'M{internal}'
 
 def random_cds(aa_seq, freq_table):
     cds = []

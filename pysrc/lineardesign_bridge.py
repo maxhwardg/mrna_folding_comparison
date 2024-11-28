@@ -31,7 +31,6 @@ def make_linear_design_cft_csv(cft: protein.CodonFrequencyTable) -> str:
 
 def call_linear_design(cft: protein.CodonFrequencyTable, path: str, aa_seq: str, lambda_value:float = 0.0) -> LinearDesignResult:
     """Calls LinearDesign via a subprocess"""
-    # Get the absolute path to the codon usage table file
     # Change the working directory to the LinearDesign directory since it can't load .so files otherwise
     orig_path = os.getcwd()
     csv_cft = make_linear_design_cft_csv(cft)
@@ -60,7 +59,7 @@ def call_linear_design(cft: protein.CodonFrequencyTable, path: str, aa_seq: str,
     
 def main():
     cft = protein.CodonFrequencyTable('../data/homosapiens.txt')
-    print(call_linear_design(cft, "../extern/LinearDesign-main/", "MLLLLV*"))
+    print(call_linear_design(cft, "../extern/LinearDesign-main/", "MLLLLV"))
     
 if __name__ == "__main__":
     main()
