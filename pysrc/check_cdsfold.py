@@ -1,15 +1,17 @@
-from lineardesign_bridge import call_lineardesign
+from cdsfold_bridge import call_cdsfold
 import protein
 import vienna
 
 def main():
     eps = 1e-3
-    aa_len = 30
+    aa_len = 50
     cft = protein.CodonFrequencyTable('../data/homosapiens.txt')
     for _ in range(1000):
         aa_seq = protein.random_aa_seq(aa_len)
         print(aa_seq)
-        res = call_lineardesign(cft, "../extern/LinearDesign-main", aa_seq)
+        res = call_cdsfold("../extern/CDSfold-main", aa_seq)
+        assert len(res.rna_seq) == len(aa_seq)*3, f'{len(res.rna_seq)} != {len(aa_seq)*3}'
+        assert len(res.rna_seq) == len(res.db), f'{len(res.rna_seq)} != {len(res.db)}'
         cds = protein.rna_to_cds(res.rna_seq)
         for i, codon in enumerate(cds):
             assert codon in cft.get_codons(aa_seq[i]), f'{codon} not in {cft.get_codons(aa_seq[i])} for amino acid {aa_seq[i]} (index {i})'
@@ -21,8 +23,7 @@ def main():
         assert abs(vienna_fe - res.mfe) < eps, f'{vienna_fe} != {res.mfe}'
         assert abs(vienna_mfe - res.mfe) < eps, f'{vienna_mfe} != {res.mfe}'
         ref_cai = cft.codon_adaptation_index(cds)
-        print(res.cai, ref_cai)
-        assert abs(ref_cai - res.cai) < eps, f'{ref_cai} != {res.cai}'
+        print(ref_cai)
         
 
 if __name__ == '__main__':
