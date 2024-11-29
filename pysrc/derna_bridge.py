@@ -27,12 +27,13 @@ def make_derna_cft_csv(cft: protein.CodonFrequencyTable) -> str:
             if aa == '*':
                 continue
             codons = cft.get_codons(aa)
-            codon_row = [""]
+            codon_row = ['']
             codon_row.extend(codons)
             file.write(','.join(codon_row) + '\n')
             aa_row = [aa] + [0]*6
             for i, cdn in enumerate(codons):
                 aa_row[i+1] = cft.get_codon_freq(cdn)
+            aa_row.append('')
             file.write(','.join(map(str, aa_row)) + '\n')
                 
     return file.name
