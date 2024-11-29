@@ -1,6 +1,7 @@
 from cdsfold_bridge import call_cdsfold
 from derna_bridge import call_derna
 from lineardesign_bridge import call_lineardesign
+from mrnafold_bridge import call_mrnafold
 import protein
 import vienna
 
@@ -22,12 +23,15 @@ def main():
         cds_res = call_cdsfold("../extern/CDSfold-main", aa_seq)
         linear_res = call_lineardesign(cft, "../extern/LinearDesign-main/", aa_seq)
         derna_res = call_derna(cft, "../extern/derna-main", aa_seq)
+        mrna_res = call_mrnafold("../extern/mrnafold-main", aa_seq)
         
         
-        print(cds_res.mfe, linear_res.mfe, derna_res.mfe)
+        print(cds_res.mfe, linear_res.mfe, derna_res.mfe, mrna_res.mfe)
+        assert abs(cds_res.mfe - mrna_res.mfe) < eps, f'{cds_res.mfe} != {mrna_res.mfe}'
         assert abs(cds_res.mfe - linear_res.mfe) < eps, f'{cds_res.mfe} != {linear_res.mfe}'
         assert abs(cds_res.mfe - derna_res.mfe) < eps, f'{cds_res.mfe} != {derna_res.mfe}'
         
+        validate_res(mrna_res.rna_seq, mrna_res.mfe, mrna_res.db, eps, 'mrnafold')
         validate_res(cds_res.rna_seq, cds_res.mfe, cds_res.db, eps, 'cdsfold')
         validate_res(linear_res.rna_seq, linear_res.mfe, linear_res.db, eps, 'lineardesign')
         validate_res(derna_res.rna_seq, derna_res.mfe, derna_res.db, eps, 'derna')

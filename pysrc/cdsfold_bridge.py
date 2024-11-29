@@ -29,13 +29,16 @@ def make_cdsfold_fasta(aa_seq: str) -> str:
 def call_cdsfold(path: str, aa_seq: str) -> CdsFoldResult:
     """Calls CdsFold via a subprocess"""
     fasta = make_cdsfold_fasta(aa_seq)
-    with tempfile.NamedTemporaryFile(mode='w', delete=False) as file:
-        ts = time.time()
-        result = subprocess.run([os.path.join(
-            path, 'src/CDSfold'), fasta], capture_output=True, text=True, check=False)
-        te = time.time()
-        if result.returncode != 0:
-            raise CdsFoldException(f'CdsFold failed with return code: {result.returncode}, and stderror: {result.stderr}')
+    ts = time.time()
+    result = subprocess.run([os.path.join(
+        path, 'src/CDSfold'), fasta], capture_output=True, text=True, check=False)
+    te = time.time()
+    
+    # Clean up tmp file
+    os.remove(fasta)
+    
+    if result.returncode != 0:
+        raise CdsFoldException(f'CdsFold failed with return code: {result.returncode}, and stderror: {result.stderr}')
     ret = CdsFoldResult(time_s=te-ts)
     lns = result.stdout.split('\n')
     ret.rna_seq = lns[-5]

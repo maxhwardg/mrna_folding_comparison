@@ -46,7 +46,7 @@ def make_derna_fasta(aa_seq: str) -> str:
     return file.name
 
 
-def call_derna(cft: protein.CodonFrequencyTable, path: str, aa_seq: str, lambda_value:float | None = 0.5) -> DernaResult:
+def call_derna(cft: protein.CodonFrequencyTable, path: str, aa_seq: str, lambda_value:float = 0.0) -> DernaResult:
     """Calls DERNA via a subprocess"""
     csv_cft = make_derna_cft_csv(cft)
     fasta = make_derna_fasta(aa_seq)
@@ -55,22 +55,32 @@ def call_derna(cft: protein.CodonFrequencyTable, path: str, aa_seq: str, lambda_
         ts = time.time()
         result = subprocess.run([os.path.join(path, 'build/derna'), '-c', csv_cft, '-i', fasta, '-o', file.name, '-m', '1', '-s', '2', '-l', str(lambda_value)], capture_output=True, text=True, check=False)
         te = time.time()
-        if result.returncode != 0:
-            raise DernaException(f'DERNA failed with return code: {result.returncode}, and stderror: {result.stderr}')
         fname = file.name
-    res = DernaResult(time_s = te-ts)
+        
+    # Delete tmp input files
+    os.remove(csv_cft)
+    os.remove(fasta)
     with open(fname, 'r', encoding='utf-8') as file:
-        for ln in file:
-            if ln.startswith('zuker cai rna:'):
-                res.rna_seq = ln[len('zuker cai rna: '):].split('.size')[0].strip()
-            elif ln.startswith('Codon Adaptation Index: '):
-                res.cai = float(ln[len('Codon Adaptation Index: '):].strip())
-            elif ln.startswith('Minimum Free Energy: '):
-                res.mfe = float(ln[len('Minimum Free Energy: '):].strip())
-            elif ln.startswith('zuker cai bp: '):
-                res.db = ln[len('zuker cai bp: '):].split(',size')[0].strip()
+        lns = file.readlines()
+    # Delete tmp output file
+    os.remove(fname)
     # Delete garbage DERNA creates
     os.remove("dd.txt")
+    
+    if result.returncode != 0:
+        os.remove(fname)
+        raise DernaException(f'DERNA failed with return code: {result.returncode}, and stderror: {result.stderr}')
+    
+    res = DernaResult(time_s = te-ts)
+    for ln in lns:
+        if ln.startswith('zuker cai rna:'):
+            res.rna_seq = ln[len('zuker cai rna: '):].split('.size')[0].strip()
+        elif ln.startswith('Codon Adaptation Index: '):
+            res.cai = float(ln[len('Codon Adaptation Index: '):].strip())
+        elif ln.startswith('Minimum Free Energy: '):
+            res.mfe = float(ln[len('Minimum Free Energy: '):].strip())
+        elif ln.startswith('zuker cai bp: '):
+            res.db = ln[len('zuker cai bp: '):].split(',size')[0].strip()
     return res
             
             

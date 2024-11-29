@@ -39,6 +39,10 @@ def call_lineardesign(cft: protein.CodonFrequencyTable, path: str, aa_seq: str, 
     result = subprocess.run(['bin/LinearDesign_2D', '0', str(lambda_value), csv_cft], input=aa_seq, capture_output=True, text=True, check=False)
     te = time.time()
     os.chdir(orig_path)
+    
+    # Clean up tmp file
+    os.remove(csv_cft)
+    
     if result.returncode != 0:
         raise LinearDesignException(f'LinearDesign failed with return code: {result.returncode}, and stderror: {result.stderr}')
     
@@ -53,6 +57,8 @@ def call_lineardesign(cft: protein.CodonFrequencyTable, path: str, aa_seq: str, 
             toks = ln[len('mRNA folding free energy: '):].split('; mRNA CAI: ')
             res.mfe = float(toks[0].split(' kcal/mol')[0].strip())
             res.cai = float(toks[1].strip())
+            
+    
     return res
             
             
