@@ -10,32 +10,43 @@ def main():
 
     derna_mx = 0
     cds_mx = 0
-    threshold = 1800
+    timeout_s = 1800
+    random_seq = True
+    
+    def gen_ml_seq(sz: int) -> str:
+        return "M" + "L" * (sz - 1)
+    
+    def gen_seq(sz: int) -> str:
+        return protein.random_aa_seq(sz) if random_seq else gen_ml_seq(sz)
 
-    for aa_len in range(50, 2000, 50):
+    for aa_len in range(500, 1001, 50):
         print("aa_len:", aa_len)
 
         # LinearDesign tends to fail an assert and crash, so retry until it works
         while True:
-            aa_seq = protein.random_aa_seq(aa_len)
+            aa_seq = gen_seq(aa_len)
             try:
                 linear_res = call_lineardesign(
                     cft, "../extern/LinearDesign-main/", aa_seq
                 )
             except LinearDesignException as e:
-                print(f"LinearDesign failed with error: {e}. Trying again.")
-                continue
+                if random_seq:
+                    print(f"LinearDesign failed with error: {e}. Trying again.")
+                    continue
+                else:
+                    # Can't retry with deterministic sequences
+                    raise e
             break
 
         print("lineardesign time(s):", linear_res.time_s)
 
-        if cds_mx < threshold:
+        if cds_mx < timeout_s:
             cds_res = call_cdsfold("../extern/CDSfold-main", aa_seq)
             print("cdsfold time(s):", cds_res.time_s)
             cds_mx = max(cds_mx, cds_res.time_s)
 
-        if derna_mx < threshold:
-            derna_res = call_derna(cft, "../extern/derna-main", aa_seq)
+        if derna_mx < timeout_s:
+            derna_res = call_derna(cft, "../extern/derna-main", aa_seq, lambda_value=1.0)
             print("derna time(s):", derna_res.time_s)
             derna_mx = max(derna_mx, derna_res.time_s)
 

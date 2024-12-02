@@ -1,9 +1,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-file = open("../data/bench_runs/tmp", "r")
+file = open("../data/bench_runs/02-12-2024-ml.txt", "r")
 raw_data = file.read()
-plot_scale = "linear"
+plot_scale = "log"
 
 # Function to parse the raw data
 def parse_data(raw_data):
@@ -47,14 +47,14 @@ print(df_parsed)
 plt.figure(figsize=(12, 8))
 plt.plot(df_parsed["aa_len"], df_parsed["lineardesign_time"], label="LinearDesign", marker="o")
 plt.plot(df_parsed["aa_len"], df_parsed["cdsfold_time"], label="CDSfold", marker="s")
-plt.plot(df_parsed["aa_len"], df_parsed["derna_time"], label="deRNA", marker="^")
+plt.plot(df_parsed["aa_len"], df_parsed["derna_time"], label="DERNA", marker="^")
 # plt.plot(df_parsed["aa_len"], df_parsed["mrnafold_time"], label="mRNAfold", marker="d")
 
-plt.title("Execution Time vs. Amino Acid Length")
-plt.xlabel("Amino Acid Length (aa_len)")
+plt.title("Execution Time vs. Protein Length")
+plt.xlabel("Protein Length (in amino acids)")
 plt.ylabel("Execution Time (s)")
 plt.legend()
 plt.grid(True)
 plt.yscale(plot_scale)
 plt.show()
-plt.savefig("../data/bench.png")
+plt.savefig("../data/bench.pdf", dpi=300)

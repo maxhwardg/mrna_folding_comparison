@@ -1,3 +1,4 @@
+"""Checks that LinearDesign is consistent with ViennaRNA and the codon frequency table."""
 from lineardesign_bridge import call_lineardesign
 import protein
 import vienna
@@ -7,6 +8,8 @@ def main():
     aa_len = 30
     cft = protein.CodonFrequencyTable('../data/homosapiens.txt')
     for _ in range(10000):
+        # Note: random_aa_seq will never return a stop codon
+        # Adding a stop codon "*" tends to make LinearDesign fail an assert
         aa_seq = protein.random_aa_seq(aa_len)
         print(aa_seq)
         res = call_lineardesign(cft, "../extern/LinearDesign-main", aa_seq, lambda_value=1.0)

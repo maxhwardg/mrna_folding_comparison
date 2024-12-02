@@ -1,10 +1,11 @@
+"""Checks that DERNA is consistent with ViennaRNA and the codon frequency table."""
 from derna_bridge import call_derna
 import protein
 import vienna
 
 def main():
     eps = 1e-3
-    aa_len = 30
+    aa_len = 100
     cft = protein.CodonFrequencyTable('../data/homosapiens.txt')
     for _ in range(1000):
         aa_seq = protein.random_aa_seq(aa_len)
@@ -24,7 +25,9 @@ def main():
         assert abs(vienna_mfe - res.mfe) < eps, f'{vienna_mfe} != {res.mfe}'
         ref_cai = cft.codon_adaptation_index(cds)
         print(res.cai, ref_cai)
+        
         # DERNA almost always has an incorrect CAI
+        # This line must be commented out to see MFE errors
         # assert abs(ref_cai - res.cai) < eps, f'{ref_cai} != {res.cai}'
         
 

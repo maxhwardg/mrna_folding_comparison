@@ -1,3 +1,4 @@
+"""Checks that CDSfold is consistent with ViennaRNA and the codon frequency table."""
 from cdsfold_bridge import call_cdsfold
 import protein
 import vienna

@@ -1,3 +1,7 @@
+"""
+Checks all programs against each other.
+Cross-validates their ouputs are the same, and that they agree with ViennaRNA.
+"""
 from cdsfold_bridge import call_cdsfold
 from derna_bridge import call_derna
 from lineardesign_bridge import call_lineardesign
@@ -22,7 +26,7 @@ def main():
         print(aa_seq)
         cds_res = call_cdsfold("../extern/CDSfold-main", aa_seq)
         linear_res = call_lineardesign(cft, "../extern/LinearDesign-main/", aa_seq)
-        derna_res = call_derna(cft, "../extern/derna-main", aa_seq)
+        derna_res = call_derna(cft, "../extern/derna-main", aa_seq, lambda_value=1.0)
         mrna_res = call_mrnafold("../extern/mrnafold-main", aa_seq)
         
         

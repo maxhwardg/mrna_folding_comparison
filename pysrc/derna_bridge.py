@@ -46,7 +46,7 @@ def make_derna_fasta(aa_seq: str) -> str:
     return file.name
 
 
-def call_derna(cft: protein.CodonFrequencyTable, path: str, aa_seq: str, lambda_value:float = 0.0) -> DernaResult:
+def call_derna(cft: protein.CodonFrequencyTable, path: str, aa_seq: str, lambda_value:float = 1.0) -> DernaResult:
     """Calls DERNA via a subprocess"""
     csv_cft = make_derna_cft_csv(cft)
     fasta = make_derna_fasta(aa_seq)
@@ -83,12 +83,10 @@ def call_derna(cft: protein.CodonFrequencyTable, path: str, aa_seq: str, lambda_
             res.db = ln[len('zuker cai bp: '):].split(',size')[0].strip()
     return res
             
-            
     
 def main():
     cft = protein.CodonFrequencyTable('../data/homosapiens.txt')
-    print(call_derna(cft, "../extern/derna-main", "MLLLLV"))
+    print(call_derna(cft, "../extern/derna-main", "MLLLLVGVFLRDIGE", lambda_value=0.5))
     
 if __name__ == "__main__":
     main()
-    
