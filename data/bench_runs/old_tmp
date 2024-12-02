@@ -1,0 +1,141 @@
+aa_len: 50
+cdsfold time(s): 0.2677748203277588
+lineardesign time(s): 0.25018882751464844
+derna time(s): 2.786715269088745
+mrnafold time(s): 0.03677082061767578
+
+aa_len: 100
+cdsfold time(s): 1.8207471370697021
+lineardesign time(s): 1.5528650283813477
+derna time(s): 25.475632667541504
+mrnafold time(s): 0.1356949806213379
+
+aa_len: 150
+cdsfold time(s): 4.137896299362183
+lineardesign time(s): 3.311429977416992
+derna time(s): 49.6978862285614
+mrnafold time(s): 0.2576768398284912
+
+aa_len: 200
+cdsfold time(s): 6.509918689727783
+lineardesign time(s): 4.694183349609375
+derna time(s): 77.91766667366028
+mrnafold time(s): 0.39484453201293945
+
+aa_len: 250
+cdsfold time(s): 11.250138282775879
+lineardesign time(s): 6.501543283462524
+derna time(s): 90.29914093017578
+mrnafold time(s): 0.5564873218536377
+
+aa_len: 300
+cdsfold time(s): 18.060392141342163
+lineardesign time(s): 8.769686460494995
+derna time(s): 121.2372612953186
+mrnafold time(s): 0.7781472206115723
+
+aa_len: 350
+cdsfold time(s): 30.848939180374146
+lineardesign time(s): 13.276495695114136
+derna time(s): 212.9474847316742
+mrnafold time(s): 1.155428409576416
+
+aa_len: 400
+cdsfold time(s): 48.29149603843689
+lineardesign time(s): 19.90498161315918
+derna time(s): 315.9557180404663
+mrnafold time(s): 1.646214246749878
+
+aa_len: 450
+cdsfold time(s): 67.44791793823242
+lineardesign time(s): 24.70258378982544
+derna time(s): 492.70370268821716
+mrnafold time(s): 2.1058459281921387
+
+aa_len: 500
+cdsfold time(s): 91.31498289108276
+lineardesign time(s): 30.440801858901978
+derna time(s): 504.8071401119232
+mrnafold time(s): 2.648184299468994
+
+aa_len: 550
+cdsfold time(s): 124.86047649383545
+lineardesign time(s): 37.432936668395996
+derna time(s): 634.0768659114838
+mrnafold time(s): 3.3173117637634277
+
+aa_len: 600
+cdsfold time(s): 155.22826600074768
+lineardesign time(s): 42.877350091934204
+derna time(s): 688.1167306900024
+mrnafold time(s): 3.881161689758301
+
+aa_len: 650
+cdsfold time(s): 195.05929112434387
+lineardesign time(s): 52.405216693878174
+derna time(s): 875.3284492492676
+mrnafold time(s): 4.814932107925415
+
+aa_len: 700
+cdsfold time(s): 242.79317712783813
+lineardesign time(s): 62.82390832901001
+derna time(s): 1063.9187972545624
+mrnafold time(s): 5.807098388671875
+
+aa_len: 750
+cdsfold time(s): 284.0708544254303
+lineardesign time(s): 66.2039487361908
+mrnafold time(s): 6.41460919380188
+
+aa_len: 800
+cdsfold time(s): 355.625657081604
+lineardesign time(s): 81.28191590309143
+mrnafold time(s): 8.106240034103394
+
+aa_len: 850
+cdsfold time(s): 418.3783621788025
+lineardesign time(s): 89.35819792747498
+mrnafold time(s): 8.973628044128418
+
+aa_len: 900
+cdsfold time(s): 539.3451380729675
+lineardesign time(s): 110.63566613197327
+mrnafold time(s): 11.384137392044067
+
+aa_len: 950
+cdsfold time(s): 551.6411519050598
+lineardesign time(s): 106.74581265449524
+mrnafold time(s): 11.894796133041382
+
+aa_len: 1000
+cdsfold time(s): 692.6978688240051
+lineardesign time(s): 133.26300477981567
+mrnafold time(s): 14.786335468292236
+
+aa_len: 1050
+cdsfold time(s): 788.3242926597595
+lineardesign time(s): 146.16516375541687
+mrnafold time(s): 16.30362105369568
+
+aa_len: 1100
+cdsfold time(s): 888.8580753803253
+lineardesign time(s): 157.5952649116516
+mrnafold time(s): 18.52308940887451
+
+aa_len: 1150
+cdsfold time(s): 1037.20019364357
+lineardesign time(s): 187.34997153282166
+mrnafold time(s): 21.49539065361023
+
+aa_len: 1200
+cdsfold time(s): 1179.5203876495361
+lineardesign time(s): 189.21712040901184
+mrnafold time(s): 24.107771635055542
+
+aa_len: 1250
+cdsfold time(s): 1327.2398228645325
+lineardesign time(s): 231.26881551742554
+mrnafold time(s): 27.580007314682007
+
+aa_len: 1300
+cdsfold time(s): 1498.481255531311
