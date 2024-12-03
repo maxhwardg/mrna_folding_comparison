@@ -1,11 +1,8 @@
 """
 Checks all programs against each other.
-Cross-validates their ouputs are the same, and that they agree with ViennaRNA.
+Cross-validates their MFEs are the same, and that they agree with ViennaRNA.
 """
-from cdsfold_bridge import call_cdsfold
-from derna_bridge import call_derna
-from lineardesign_bridge import call_lineardesign
-from mrnafold_bridge import call_mrnafold
+from bridge import call_cdsfold, call_lineardesign, call_derna, call_mrnafold
 import protein
 import vienna
 

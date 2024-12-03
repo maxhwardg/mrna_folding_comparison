@@ -28,3 +28,27 @@ lineardesign time(s): 1102.8541324138641
 cdsfold time(s): 983.5790438652039
 mrnafold time(s): 37.55271291732788
 
+aa_len: 800
+lineardesign time(s): 1263.159279346466
+cdsfold time(s): 1158.2645692825317
+mrnafold time(s): 43.50256586074829
+
+aa_len: 850
+lineardesign time(s): 1425.1865434646606
+cdsfold time(s): 1417.7088150978088
+mrnafold time(s): 50.044328451156616
+
+aa_len: 900
+lineardesign time(s): 1600.4048745632172
+cdsfold time(s): 1622.9399464130402
+mrnafold time(s): 57.075438261032104
+
+aa_len: 950
+lineardesign time(s): 1804.6481325626373
+cdsfold time(s): 1899.7175509929657
+mrnafold time(s): 64.73443698883057
+
+aa_len: 1000
+lineardesign time(s): 1993.3683831691742
+mrnafold time(s): 73.07900738716125
+

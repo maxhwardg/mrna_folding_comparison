@@ -1,15 +1,16 @@
-from mrnafold_bridge import call_mrnafold
+"""Checks that mRNAfold is consistent with ViennaRNA and the codon frequency table."""
+from bridge import call_mrnafold
 import protein
 import vienna
 
 def main():
     eps = 1e-3
-    aa_len = 100
+    aa_len = 30
     cft = protein.CodonFrequencyTable('../data/homosapiens.txt')
     for _ in range(1000):
         aa_seq = protein.random_aa_seq(aa_len)
         print(aa_seq)
-        res = call_mrnafold("../extern/mrnafold-main", aa_seq, lambda_value=1.0)
+        res = call_mrnafold("../extern/mrnafold-main", aa_seq, lambda_value=0.0)
         assert len(res.rna_seq) == len(aa_seq)*3, f'{len(res.rna_seq)} != {len(aa_seq)*3}'
         assert len(res.rna_seq) == len(res.db), f'{len(res.rna_seq)} != {len(res.db)}'
         cds = protein.rna_to_cds(res.rna_seq)

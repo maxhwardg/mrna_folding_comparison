@@ -1,0 +1,17 @@
+aa_len: 1000
+lineardesign time(s): 1999.8538677692413
+cdsfold time(s): 2247.0752816200256
+mrnafold time(s): 73.27391958236694
+
+aa_len: 1050
+lineardesign time(s): 2205.0852859020233
+cdsfold time(s): 2527.3546545505524
+mrnafold time(s): 81.57385802268982
+
+aa_len: 1100
+lineardesign time(s): 2423.342693090439
+cdsfold time(s): 2908.5039682388306
+mrnafold time(s): 93.63595509529114
+
+aa_len: 1150
+lineardesign time(s): 2658.940857410431

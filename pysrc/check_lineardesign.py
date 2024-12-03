@@ -1,5 +1,5 @@
 """Checks that LinearDesign is consistent with ViennaRNA and the codon frequency table."""
-from lineardesign_bridge import call_lineardesign
+from bridge import call_lineardesign
 import protein
 import vienna
 
