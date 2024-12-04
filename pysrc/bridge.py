@@ -128,11 +128,11 @@ def call_derna(cft: protein.CodonFrequencyTable, path: str, aa_seq: str, lambda_
         lns = file.readlines()
     # Delete tmp output file
     os.remove(fname)
-    # Delete garbage DERNA creates
-    os.remove("dd.txt")
+    # Delete garbage file DERNA creates
+    if os.path.exists("dd.txt"):
+        os.remove("dd.txt")
 
     if result.returncode != 0:
-        os.remove(fname)
         raise FoldException(f'DERNA failed with return code: '
                             f'{result.returncode}, and stderror: {result.stderr}')
 
@@ -166,7 +166,7 @@ def call_lineardesign(cft: protein.CodonFrequencyTable, path: str, aa_seq: str, 
     csv_cft = make_linear_design_cft_csv(cft)
     os.chdir(path)
     result, mem_b, time_s = call_subprocess(
-        ['bin/LinearDesign_2D', '0', str(lambda_value), csv_cft], input_str=aa_seq)
+        ['bin/LinearDesign_2D', str(lambda_value), '0', csv_cft], input_str=aa_seq)
     os.chdir(orig_path)
 
     # Clean up tmp file
@@ -227,10 +227,9 @@ def call_mrnafold(path: str, aa_seq: str, parallel: bool = True, lambda_value: f
 
 
 def main():
-    aa_str = "MLVLVLVLVL"
+    aa_str = "MLVLVLV"
     print(call_cdsfold("../extern/CDSfold-main", aa_str))
-    cft = protein.CodonFrequencyTable(
-        "../data/homosapiens.txt")
+    cft = protein.CodonFrequencyTable("../data/homosapiens.txt")
     print(call_derna(cft, "../extern/derna-main", aa_str))
     print(call_lineardesign(cft, "../extern/LinearDesign-main/", aa_str))
     print(call_mrnafold("../extern/mrnafold-main/", aa_str))

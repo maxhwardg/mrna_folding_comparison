@@ -8,7 +8,7 @@ def main():
     derna_mx = 0
     cds_mx = 0
     timeout_s = 3600
-    random_seq = False
+    random_seq = True
     
     def gen_ml_seq(sz: int) -> str:
         return "M" + "L" * (sz - 1)
