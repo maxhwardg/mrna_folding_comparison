@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-file = open("../data/bench_runs/tmp_bench1", "r")
+file = open("../data/bench_runs/randomseq_benchmark_data", "r")
 raw_data = file.read()
 plot_scale = "linear"
 
@@ -85,7 +85,7 @@ plt.ylabel("Execution Time (s)")
 plt.legend()
 plt.grid(True)
 plt.yscale(plot_scale)
-plt.show()
+# plt.show()
 plt.savefig("../data/bench_time.pdf", dpi=300)
 
 # Plot the memory
@@ -101,5 +101,5 @@ plt.ylabel("Memory Usage (in Gigabytes)")
 plt.legend()
 plt.grid(True)
 plt.yscale(plot_scale)
-plt.show()
+# plt.show()
 plt.savefig("../data/bench_mem.pdf", dpi=300)
