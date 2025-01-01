@@ -1,0 +1,262 @@
+aa_len: 50
+lineardesign time(s): 0.3115873336791992
+lineardesign memory(bytes): 85458944
+cdsfold time(s): 0.32460784912109375
+cdsfold memory(bytes): 7602176
+derna time(s): 4.135707139968872
+derna memory(bytes): 65011712
+mrnafold time(s): 0.043663740158081055
+mrnafold memory(bytes): 524288
+aa_len: 100
+lineardesign time(s): 0.9876770973205566
+lineardesign memory(bytes): 327417856
+cdsfold time(s): 1.1318120956420898
+cdsfold memory(bytes): 14680064
+derna time(s): 11.137136220932007
+derna memory(bytes): 194510848
+mrnafold time(s): 0.1001749038696289
+mrnafold memory(bytes): 524288
+aa_len: 150
+lineardesign time(s): 2.881603956222534
+lineardesign memory(bytes): 727449600
+cdsfold time(s): 3.852400541305542
+cdsfold memory(bytes): 27262976
+derna time(s): 41.033496618270874
+derna memory(bytes): 526647296
+mrnafold time(s): 0.24722528457641602
+mrnafold memory(bytes): 94773248
+aa_len: 200
+lineardesign time(s): 4.641659736633301
+lineardesign memory(bytes): 1285816320
+cdsfold time(s): 6.83189845085144
+cdsfold memory(bytes): 42991616
+derna time(s): 60.95803117752075
+derna memory(bytes): 839385088
+mrnafold time(s): 0.39577388763427734
+mrnafold memory(bytes): 107192320
+aa_len: 250
+lineardesign time(s): 6.113471984863281
+lineardesign memory(bytes): 1983905792
+cdsfold time(s): 10.461207389831543
+cdsfold memory(bytes): 62914560
+derna time(s): 84.04951524734497
+derna memory(bytes): 1183055872
+mrnafold time(s): 0.5870952606201172
+mrnafold memory(bytes): 235442176
+aa_len: 300
+lineardesign time(s): 10.05246114730835
+lineardesign memory(bytes): 2856845312
+cdsfold time(s): 20.168638706207275
+cdsfold memory(bytes): 89391104
+derna time(s): 139.32166290283203
+derna memory(bytes): 1884553216
+mrnafold time(s): 0.8757321834564209
+mrnafold memory(bytes): 351408128
+aa_len: 350
+lineardesign time(s): 12.667453289031982
+lineardesign memory(bytes): 3887595520
+cdsfold time(s): 30.35566210746765
+cdsfold memory(bytes): 117702656
+derna time(s): 169.52840280532837
+derna memory(bytes): 2386821120
+mrnafold time(s): 1.1409835815429688
+mrnafold memory(bytes): 458047488
+aa_len: 400
+lineardesign time(s): 19.16473126411438
+lineardesign memory(bytes): 5078253568
+cdsfold time(s): 48.25736975669861
+cdsfold memory(bytes): 153092096
+derna time(s): 275.9542963504791
+derna memory(bytes): 3454271488
+mrnafold time(s): 1.670351266860962
+mrnafold memory(bytes): 625397760
+aa_len: 450
+lineardesign time(s): 25.496931791305542
+lineardesign memory(bytes): 6394216448
+cdsfold time(s): 70.70787191390991
+cdsfold memory(bytes): 193200128
+derna time(s): 378.3828134536743
+derna memory(bytes): 4442816512
+mrnafold time(s): 2.2091684341430664
+mrnafold memory(bytes): 794521600
+aa_len: 500
+lineardesign time(s): 27.67923927307129
+lineardesign memory(bytes): 7897350144
+cdsfold time(s): 89.74995827674866
+cdsfold memory(bytes): 233308160
+derna time(s): 382.2740385532379
+derna memory(bytes): 5042339840
+mrnafold time(s): 2.534627676010132
+mrnafold memory(bytes): 939180032
+aa_len: 550
+lineardesign time(s): 42.07299208641052
+lineardesign memory(bytes): 9561178112
+cdsfold time(s): 128.04613280296326
+cdsfold memory(bytes): 290717696
+derna time(s): 689.6084060668945
+derna memory(bytes): 6956515328
+mrnafold time(s): 3.61723256111145
+mrnafold memory(bytes): 1210462208
+aa_len: 600
+lineardesign time(s): 41.45764970779419
+lineardesign memory(bytes): 11380981760
+cdsfold time(s): 152.97395706176758
+cdsfold memory(bytes): 337117184
+derna time(s): 611.9965586662292
+derna memory(bytes): 7188512768
+mrnafold time(s): 3.8958652019500732
+mrnafold memory(bytes): 1340940288
+aa_len: 650
+lineardesign time(s): 55.3431499004364
+lineardesign memory(bytes): 13314293760
+cdsfold time(s): 202.3051357269287
+cdsfold memory(bytes): 394264576
+derna time(s): 890.9694938659668
+derna memory(bytes): 9155641344
+mrnafold time(s): 5.154264450073242
+mrnafold memory(bytes): 1635799040
+aa_len: 700
+lineardesign time(s): 65.22665643692017
+lineardesign memory(bytes): 15458893824
+cdsfold time(s): 240.91124439239502
+cdsfold memory(bytes): 455606272
+derna time(s): 1030.9971897602081
+derna memory(bytes): 10423631872
+mrnafold time(s): 6.087708950042725
+mrnafold memory(bytes): 1878126592
+aa_len: 750
+lineardesign time(s): 70.32919907569885
+lineardesign memory(bytes): 17789616128
+cdsfold time(s): 298.45706820487976
+cdsfold memory(bytes): 517210112
+derna time(s): 1116.085967540741
+derna memory(bytes): 11495276544
+mrnafold time(s): 6.9630327224731445
+mrnafold memory(bytes): 2110754816
+aa_len: 800
+lineardesign time(s): 81.28703331947327
+lineardesign memory(bytes): 20225720320
+cdsfold time(s): 350.69422698020935
+cdsfold memory(bytes): 588513280
+derna time(s): 1266.2024374008179
+derna memory(bytes): 13203668992
+mrnafold time(s): 8.297438144683838
+mrnafold memory(bytes): 2412638208
+aa_len: 850
+lineardesign time(s): 103.53747081756592
+lineardesign memory(bytes): 22756982784
+cdsfold time(s): 441.38557982444763
+cdsfold memory(bytes): 672399360
+derna time(s): 1777.0211350917816
+derna memory(bytes): 15895363584
+mrnafold time(s): 10.275511503219604
+mrnafold memory(bytes): 2809905152
+aa_len: 900
+lineardesign time(s): 101.0692253112793
+lineardesign memory(bytes): 25566117888
+cdsfold time(s): 485.1999628543854
+cdsfold memory(bytes): 737673216
+derna time(s): 1546.6462302207947
+derna memory(bytes): 16383475712
+mrnafold time(s): 10.912820100784302
+mrnafold memory(bytes): 3021291520
+aa_len: 950
+lineardesign time(s): 113.84388899803162
+lineardesign memory(bytes): 28470673408
+cdsfold time(s): 592.9499638080597
+cdsfold memory(bytes): 830472192
+derna time(s): 1913.2881650924683
+derna memory(bytes): 18935971840
+mrnafold time(s): 13.026617765426636
+mrnafold memory(bytes): 3426373632
+aa_len: 1000
+lineardesign time(s): 137.35358572006226
+lineardesign memory(bytes): 31532777472
+cdsfold time(s): 701.3678388595581
+cdsfold memory(bytes): 923795456
+derna time(s): 2398.36695933342
+derna memory(bytes): 21809856512
+mrnafold time(s): 15.719077348709106
+mrnafold memory(bytes): 3869016064
+aa_len: 1050
+lineardesign time(s): 145.82066869735718
+lineardesign memory(bytes): 34749808640
+cdsfold time(s): 787.6281888484955
+cdsfold memory(bytes): 1006632960
+derna time(s): 2370.158655166626
+derna memory(bytes): 22776905728
+mrnafold time(s): 16.978649854660034
+mrnafold memory(bytes): 4150038528
+aa_len: 1100
+lineardesign time(s): 171.14707207679749
+lineardesign memory(bytes): 38124388352
+cdsfold time(s): 930.43412566185
+cdsfold memory(bytes): 1117782016
+derna time(s): 2920.522024869919
+derna memory(bytes): 26075725824
+mrnafold time(s): 20.263534784317017
+mrnafold memory(bytes): 4650725376
+aa_len: 1150
+lineardesign time(s): 191.98327946662903
+lineardesign memory(bytes): 41653633024
+cdsfold time(s): 1079.1617150306702
+cdsfold memory(bytes): 1219756032
+derna time(s): 3441.160041809082
+derna memory(bytes): 29071245312
+mrnafold time(s): 23.134172916412354
+mrnafold memory(bytes): 5131902976
+aa_len: 1200
+lineardesign time(s): 189.73004817962646
+lineardesign memory(bytes): 45426671616
+cdsfold time(s): 1195.290030002594
+cdsfold memory(bytes): 1316487168
+derna time(s): 3328.838780641556
+derna memory(bytes): 30295195648
+mrnafold time(s): 24.92034149169922
+mrnafold memory(bytes): 5467709440
+aa_len: 1250
+lineardesign time(s): 180.84424376487732
+lineardesign memory(bytes): 49177165824
+cdsfold time(s): 1254.2616369724274
+cdsfold memory(bytes): 1399177216
+derna time(s): 2965.105144739151
+derna memory(bytes): 29812850688
+mrnafold time(s): 25.084664821624756
+mrnafold memory(bytes): 5655212032
+aa_len: 1300
+lineardesign time(s): 204.05388879776
+lineardesign memory(bytes): 53176958976
+cdsfold time(s): 1494.5159554481506
+cdsfold memory(bytes): 1530920960
+derna time(s): 3752.142037630081
+derna memory(bytes): 33955774464
+mrnafold time(s): 30.135400533676147
+mrnafold memory(bytes): 6269538304
+aa_len: 1350
+lineardesign time(s): 236.37678003311157
+lineardesign memory(bytes): 57431556096
+cdsfold time(s): 1633.071252822876
+cdsfold memory(bytes): 1646526464
+mrnafold time(s): 33.22349309921265
+mrnafold memory(bytes): 6750273536
+aa_len: 1400
+lineardesign time(s): 277.84011483192444
+lineardesign memory(bytes): 61747757056
+cdsfold time(s): 1837.3525671958923
+cdsfold memory(bytes): 1780400128
+mrnafold time(s): 39.079649925231934
+mrnafold memory(bytes): 7435411456
+aa_len: 1450
+lineardesign time(s): 293.44928526878357
+lineardesign memory(bytes): 66111406080
+cdsfold time(s): 2009.3448390960693
+cdsfold memory(bytes): 1907851264
+mrnafold time(s): 43.237250089645386
+mrnafold memory(bytes): 7895269376
+aa_len: 1500
+lineardesign time(s): 296.14171028137207
+lineardesign memory(bytes): 70845202432
+cdsfold time(s): 2206.3818249702454
+cdsfold memory(bytes): 2037645312
+mrnafold time(s): 45.82661509513855
+mrnafold memory(bytes): 8384606208
