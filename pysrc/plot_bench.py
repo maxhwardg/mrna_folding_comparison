@@ -20,6 +20,7 @@ def main():
     parser.add_argument(
         "--scale", "-s", help="Scale of the plot (linear/log)", default="linear"
     )
+    parser.add_argument("--include-mrnafold", action="store_true", help="Include mrnafold in the plot")
     args = parser.parse_args()
 
     assert args.scale in ["linear", "log"], "Invalid scale. Choose from linear or log"
@@ -114,6 +115,12 @@ def main():
     time_data_labels = ["lineardesign_time", "cdsfold_time", "derna_time", "mrnafold_time"]
     mem_data_labels = ["lineardesign_mem", "cdsfold_mem", "derna_mem", "mrnafold_mem"]
     
+    if not args.include_mrnafold:
+        plot_labels = plot_labels[:-1]
+        markers = markers[:-1]
+        time_data_labels = time_data_labels[:-1]
+        mem_data_labels = mem_data_labels[:-1]
+    
     mins, maxs = df_parsed.min(axis=0), df_parsed.max(axis=0)
     def get_min_max_med(label):
         mat = []
@@ -123,6 +130,10 @@ def main():
                 if val is not None:
                     rvals.append(val)
             mat.append(rvals)
+        # Since runs can exceed the timeout at different lengths,
+        # truncate the matrix to the minimum length
+        mn_len = min(map(len, mat))
+        mat = [row[:mn_len] for row in mat]
         # transpose the matrix
         mat = list(map(list, zip(*mat)))
         meds = []
@@ -150,7 +161,13 @@ def main():
                 y,
                 yerr=yerr,
                 label=plot_label,
-                # marker=marker,
+                marker=marker,
+                ecolor='gray', 
+                elinewidth=0.5,
+                capsize=2,
+                capthick=0.5,
+                markeredgecolor='black',
+                markeredgewidth=1 
             )
         
     
