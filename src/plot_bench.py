@@ -34,8 +34,6 @@ def main():
             print(f"File not found: {path}")
             return
 
-    file = open("../data/bench_runs/randomseq_benchmark_data", "r")
-    raw_data = file.read()
     plot_scale = "linear"
 
     # Function to parse the raw data
